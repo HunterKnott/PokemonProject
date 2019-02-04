@@ -4,7 +4,7 @@ public class PokeRunner
 {
 	public static void main(String [] args)
 	{
-		pokeController app = new pokeController();
+		PokeController app = new PokeController();
 		app.start();
 	}
 }
