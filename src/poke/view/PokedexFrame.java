@@ -1,18 +1,18 @@
 package poke.view;
 
 import javax.swing.JFrame;
-import poke.controller.PokeController;
+import poke.controller.PokedexController;
 
-public class PokeFrame extends JFrame
+public class PokedexFrame extends JFrame
 {
-	private PokeController appController;
-	private PokePanel appPanel;
+	private PokedexController appController;
+	private PokedexPanel appPanel;
 	
-	public PokeFrame(PokeController appController)
+	public PokedexFrame(PokedexController appController)
 	{
 		super();
 		this.appController = appController;
-		this.appPanel = new PokePanel(appController);
+		this.appPanel = new PokedexPanel(appController);
 		setupFrame();
 	}
 	

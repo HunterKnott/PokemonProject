@@ -1,7 +1,7 @@
 package poke.view;
 
 import javax.swing.*;
-import poke.controller.PokeController;
+import poke.controller.PokedexController;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -14,12 +14,12 @@ import java.awt.Dimension;
 import java.awt.Component;
 import java.awt.Font;
 
-public class PokePanel extends JPanel
+public class PokedexPanel extends JPanel
 {
-	private PokeController appController;
+	private PokedexController appController;
 	private SpringLayout appLayout;
 	
-	public PokePanel(PokeController appController)
+	public PokedexPanel(PokedexController appController)
 	{
 		super();
 		this.appController = appController;

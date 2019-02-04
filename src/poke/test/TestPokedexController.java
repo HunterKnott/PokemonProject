@@ -6,17 +6,17 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import pokemon.model.Pokemon;
-import pokemon.view.PokedexFrame;
-import pokemon.controller.PokedexController;
+import poke.model.Pokemon;
+import poke.view.PokedexFrame;
+import poke.controller.PokedexController;
 
 class TestPokeController
 {
-	PokeController tested;
+	PokedexController tested;
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		tested = new PokeController();
+		tested = new PokedexController();
 	}
 
 	@AfterEach

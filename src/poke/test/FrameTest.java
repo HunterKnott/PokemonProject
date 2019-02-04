@@ -7,18 +7,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import poke.controller.PokeController;
-import poke.view.PokeFrame;
-import poke.view.PokePanel;
+import poke.controller.PokedexController;
+import poke.view.PokedexFrame;
+import poke.view.PokedexPanel;
 
 class FrameTest
 {
-	private PokeFrame testedFrame;
+	private PokedexFrame testedFrame;
 	
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		testedFrame = new PokeFrame(new PokeController());
+		testedFrame = new PokedexFrame(new PokedexController());
 	}
 
 	@AfterEach
@@ -40,7 +40,7 @@ class FrameTest
 		assertNotNull(testedFrame.getTitle(),"You need a title");
 		assertTrue( testedFrame.getTitle().contains("Pokemon"), "Your title needs a reference to Pokemon");
 		assertFalse(testedFrame.isResizable(), "Your Pokedex app should not be resizable");
-		assertTrue( testedFrame.getContentPane() instanceof PokePanel, "You need a PokePanel inside the frame");
+		assertTrue( testedFrame.getContentPane() instanceof PokedexPanel, "You need a PokedexPanel inside the frame");
 	}
 
 }

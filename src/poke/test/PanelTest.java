@@ -13,17 +13,17 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import poke.controller.PokeController;
-import poke.view.PokePanel;
+import poke.controller.PokedexController;
+import poke.view.PokedexPanel;
 
 class PanelTest
 {
-	private PokePanel testedPanel;
+	private PokedexPanel testedPanel;
 
 	@BeforeEach
 	void setUp() throws Exception
 	{
-		testedPanel = new PokePanel(new PokeController());
+		testedPanel = new PokedexPanel(new PokedexController());
 	}
 
 	@AfterEach
