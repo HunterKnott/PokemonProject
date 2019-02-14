@@ -63,6 +63,7 @@ public class PokedexPanel extends JPanel
 		setupDropdown();
 		setupPanel();
 		setupLayout();
+		sendDataToController();
 		setupListeners();
 	}
 	
@@ -134,6 +135,19 @@ public class PokedexPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 1, SpringLayout.NORTH, numberField);
 		appLayout.putConstraint(SpringLayout.WEST, pokedexDropdown, 182, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, -61, SpringLayout.WEST, evolveLabel);
+	}
+	
+	private void sendDataToController()
+	{
+		int index = pokedexDropdown.getSelectedIndex();
+		
+		if(app.isInt(attackField.getText()) && app.isDouble(enhancementField.getText()) && app.isInt(healthField.getText()))
+		{
+			String [] data = new String[5];
+			
+			//add code here
+			app.updatePokemon(index, data);
+		}
 	}
 	
 	private void setupListeners()
