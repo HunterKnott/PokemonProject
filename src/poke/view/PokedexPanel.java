@@ -32,7 +32,7 @@ public class PokedexPanel extends JPanel
 	
 	private ImageIcon pokemonIcon;
 	
-	public PokedexPanel(PokedexController appController)
+	public PokedexPanel(PokedexController app)
 	{
 		super();
 		this.app = app;
@@ -185,6 +185,4 @@ public class PokedexPanel extends JPanel
 			}
 		});
 	}
-	
-	
 }
