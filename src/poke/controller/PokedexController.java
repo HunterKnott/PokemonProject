@@ -1,6 +1,9 @@
 package poke.controller;
 
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 import poke.model.Pokemon;
 import poke.model.Charmander;
 import poke.model.Totodile;
@@ -24,12 +27,12 @@ public class PokedexController
 	
 	private void addPokemon()
 	{
-		/*pokemonList.add(new Charmander());
+		pokemonList.add(new Charmander());
 		pokemonList.add(new Totodile());
 		pokemonList.add(new Treecko());
 		pokemonList.add(new Chimchar());
 		pokemonList.add(new Snivy());
-		pokemonList.add(new Froakie());*/
+		pokemonList.add(new Froakie());
 	}
 	
 	public void start()
@@ -59,5 +62,41 @@ public class PokedexController
 			names[index] = pokemonList.get(index).getName();
 		}
 		return names;
+	}
+	
+	public boolean isInt(String maybeInt)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Integer.parseInt(maybeInt);
+			isValid = true;
+		}
+		
+		catch (NumberFormatException exception)
+		{
+			JOptionPane.showMessageDialog(null, "Type in a whole number");
+		}
+		
+		return isValid;
+	}
+	
+	public boolean isDouble(String maybeDouble)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Double.parseDouble(maybeDouble);
+			isValid = true;
+		}
+		
+		catch (NumberFormatException exception)
+		{
+			JOptionPane.showMessageDialog(null, "Type in a decimal value");
+		}
+		
+		return isValid;
 	}
 }

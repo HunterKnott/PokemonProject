@@ -59,11 +59,11 @@ public class PokedexPanel extends JPanel
 		
 		pokedexDropdown = new JComboBox<String>();
 		
-		
 		setupDropdown();
 		setupPanel();
 		setupLayout();
 		sendDataToController();
+		//changeImageDisplay();
 		setupListeners();
 	}
 	
@@ -126,15 +126,15 @@ public class PokedexPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, enhanceLabel, -14, SpringLayout.WEST, enhancementField);
 		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 5, SpringLayout.NORTH, nameField);
 		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -18, SpringLayout.WEST, nameField);
-		appLayout.putConstraint(SpringLayout.WEST, imageLabel, 246, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, imageLabel, -198, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.NORTH, changeButton, -4, SpringLayout.NORTH, nameField);
 		appLayout.putConstraint(SpringLayout.WEST, changeButton, 10, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, changeButton, 46, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, changeButton, 101, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 1, SpringLayout.NORTH, numberField);
-		appLayout.putConstraint(SpringLayout.WEST, pokedexDropdown, 182, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 1, SpringLayout.NORTH, nameField);
+		appLayout.putConstraint(SpringLayout.WEST, pokedexDropdown, 81, SpringLayout.EAST, changeButton);
 		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, -61, SpringLayout.WEST, evolveLabel);
+		appLayout.putConstraint(SpringLayout.WEST, imageLabel, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, imageLabel, -10, SpringLayout.SOUTH, this);
 	}
 	
 	private void sendDataToController()
@@ -145,7 +145,6 @@ public class PokedexPanel extends JPanel
 		{
 			String [] data = new String[5];
 			
-			//add code here
 			app.updatePokemon(index, data);
 		}
 	}
@@ -169,6 +168,23 @@ public class PokedexPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		changeButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				sendDataToController();
+			}
+		});
 		
+		pokedexDropdown.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent selection)
+			{
+				String name = pokedexDropdown.getSelectedItem().toString();
+				changeImageDisplay(name);
+			}
+		});
 	}
+	
+	
 }
