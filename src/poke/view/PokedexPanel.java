@@ -63,7 +63,6 @@ public class PokedexPanel extends JPanel
 		setupPanel();
 		setupLayout();
 		sendDataToController();
-		//changeImageDisplay();
 		setupListeners();
 	}
 	

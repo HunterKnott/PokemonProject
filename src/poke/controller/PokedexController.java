@@ -42,7 +42,7 @@ public class PokedexController
 	
 	public PokedexFrame getFrame()
 	{
-		return PokedexFrame;
+		return appFrame;
 	}
 	
 	public void start()
