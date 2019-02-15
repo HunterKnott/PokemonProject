@@ -35,6 +35,16 @@ public class PokedexController
 		pokemonList.add(new Froakie());
 	}
 	
+	public ArrayList<Pokemon> getPokemonList()
+	{
+		return pokemonList;
+	}
+	
+	public PokedexFrame getFrame()
+	{
+		return PokedexFrame;
+	}
+	
 	public void start()
 	{
 		
