@@ -86,6 +86,28 @@ public class PokedexController
 		}
 	}
 	
+	private void loadPokedex()
+	{
+		try
+		{
+			ArrayList<Pokemon> saved = new ArrayList<Pokemon>();
+			FileInputStream inputStream = new FileInputStream(saveFile);
+			ObjectInputStream input = new ObjectInputStream(inputStream);
+			saved = (ArrayList<Pokemon>) input.readObject();
+			input.close();
+			inputStream.close();
+			pokemonList = saved;
+		}
+		catch(IOException error)
+		{
+			JOptionPane.showMessageDialog(appFrame, "No Save File", "Loading Pokemon", JOptionPane.INFORMATION_MESSAGE);
+		}
+		catch(ClassNotFoundException pokemonError)
+		{
+			JOptionPane.showMessageDialog(appFrame, pokemonError.getMessage(), "Type Error", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	
 	public boolean isInt(String maybeInt)
 	{
 		boolean isValid = false;
