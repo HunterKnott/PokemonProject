@@ -13,6 +13,7 @@ public class PokedexPanel extends JPanel
 	private SpringLayout appLayout;
 	
 	private JButton changeButton;
+	private JButton saveButton;
 	private JComboBox<String> pokedexDropdown;
 	
 	private JTextField numberField;
@@ -56,6 +57,7 @@ public class PokedexPanel extends JPanel
 		imageLabel = new JLabel("Pokemon: ", pokemonIcon, JLabel.CENTER);
 		
 		changeButton = new JButton("Change");
+		saveButton = new JButton("Save");
 		
 		pokedexDropdown = new JComboBox<String>();
 		
@@ -93,6 +95,7 @@ public class PokedexPanel extends JPanel
 		this.add(nameLabel);
 		this.add(imageLabel);
 		this.add(changeButton);
+		this.add(saveButton);
 		this.add(pokedexDropdown);
 		
 		imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
@@ -186,6 +189,14 @@ public class PokedexPanel extends JPanel
 			{
 				String name = pokedexDropdown.getSelectedItem().toString();
 				changeImageDisplay(name);
+			}
+		});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				app.savePokedex();
 			}
 		});
 	}

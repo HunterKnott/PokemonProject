@@ -4,17 +4,13 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import poke.model.Pokemon;
-import poke.model.Charmander;
-import poke.model.Totodile;
-import poke.model.Treecko;
-import poke.model.Chimchar;
-import poke.model.Snivy;
-import poke.model.Froakie;
+import poke.model.*;
 import poke.view.PokedexFrame;
+import java.io.*;
 
 public class PokedexController
 {
+	private String saveFile = "backup.pokemon";
 	private ArrayList<Pokemon> pokemonList;
 	private PokedexFrame appFrame;
 	
@@ -72,6 +68,22 @@ public class PokedexController
 			names[index] = pokemonList.get(index).getName();
 		}
 		return names;
+	}
+	
+	public void savePokedex()
+	{
+		try
+		{
+			FileOutputStream saveStream = new FileOutputStream(saveFile);
+			ObjectOutputStream output = new ObjectOutputStream(saveStream);
+			output.writeObject(pokemonList);
+			output.close();
+			saveStream.close();
+		}
+		catch(IOException error)
+		{
+			JOptionPane.showMessageDialog(appFrame, error.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+		}
 	}
 	
 	public boolean isInt(String maybeInt)
