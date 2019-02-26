@@ -137,6 +137,8 @@ public class PokedexPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, pokedexDropdown, -61, SpringLayout.WEST, evolveLabel);
 		appLayout.putConstraint(SpringLayout.WEST, imageLabel, 10, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, imageLabel, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, saveButton, 0, SpringLayout.NORTH, evolveField);
+		appLayout.putConstraint(SpringLayout.WEST, saveButton, 0, SpringLayout.WEST, imageLabel);
 	}
 	
 	private void sendDataToController()
