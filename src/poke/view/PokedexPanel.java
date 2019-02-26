@@ -144,6 +144,7 @@ public class PokedexPanel extends JPanel
 		{
 			String [] data = new String[5];
 			
+			
 			app.updatePokemon(index, data);
 		}
 	}

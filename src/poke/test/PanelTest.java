@@ -77,7 +77,6 @@ class PanelTest
 			{
 				assertTrue( ((JButton)examined).getActionListeners().length == 1, "Your button must have a listener");
 			}
-			
 		}
 	}
 

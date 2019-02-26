@@ -1,6 +1,6 @@
 package poke.model;
 
-public class Treecko extends Pokemon //implements Grass
+public class Treecko extends Pokemon implements Grass
 {
 	public Treecko()
 	{
@@ -17,13 +17,15 @@ public class Treecko extends Pokemon //implements Grass
 		super(number, name);
 	}
 	
-	/*public int gigaDrain()
+	public int gigaDrain()
 	{
-		
+		int damage = 3;
+		return damage;
 	}
 	
 	public boolean sleepPowder()
 	{
-		
-	}*/
+		boolean isAsleep = true;
+		return isAsleep;
+	}
 }

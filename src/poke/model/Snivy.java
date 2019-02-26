@@ -1,6 +1,6 @@
 package poke.model;
 
-public class Snivy extends Pokemon //implements Grass
+public class Snivy extends Pokemon implements Grass
 {
 	public Snivy()
 	{
@@ -17,13 +17,15 @@ public class Snivy extends Pokemon //implements Grass
 		super(number, name);
 	}
 	
-	/*public int gigaDrain()
+	public int gigaDrain()
 	{
-		
+		int damage = 3;
+		return damage;
 	}
 	
 	public boolean sleepPowder()
 	{
-		
-	}*/
+		boolean isAsleep = true;
+		return isAsleep;
+	}
 }

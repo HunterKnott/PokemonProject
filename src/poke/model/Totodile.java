@@ -1,6 +1,6 @@
 package poke.model;
 
-public class Totodile extends Pokemon //implements Water
+public class Totodile extends Pokemon implements Water
 {
 	public Totodile()
 	{
@@ -17,13 +17,15 @@ public class Totodile extends Pokemon //implements Water
 		super(number, name);
 	}
 	
-	/*public int waterPulse()
+	public int waterPulse()
 	{
-		
+		int damage = 3;
+		return damage;
 	}
 	
 	public boolean aquaRing()
 	{
-		
-	}*/
+		boolean isProtected = true;
+		return isProtected;
+	}
 }
