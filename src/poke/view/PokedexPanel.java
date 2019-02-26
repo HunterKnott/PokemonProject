@@ -143,7 +143,11 @@ public class PokedexPanel extends JPanel
 		if(app.isInt(attackField.getText()) && app.isDouble(enhancementField.getText()) && app.isInt(healthField.getText()))
 		{
 			String [] data = new String[5];
-			
+			data[0] = attackField.getText();
+			data[1] = enhancementField.getText();
+			data[2] = healthField.getText();
+			data[3] = nameField.getText();
+			data[4] = evolveField.getText();
 			
 			app.updatePokemon(index, data);
 		}
